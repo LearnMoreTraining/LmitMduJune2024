@@ -11,4 +11,11 @@ Feature: Amazon home page validation
   Scenario: handle the dropdown
     Given user naviagtes to amazon Home page
     When extract the dropdown values
+    And user selects the dropdown value
+
+  @amazon03
+  Scenario: mouse actions
+    Given user naviagtes to amazon Home page
+    When user clicks the baby wishlist
+
 

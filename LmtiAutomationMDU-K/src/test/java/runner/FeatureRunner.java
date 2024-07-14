@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
        features = {"src/test/resources/featurefile"},
        glue = {"stepdefinition"},
-       tags = "@amazon02"
+       tags = "@amazon03"
 )
 
 public class FeatureRunner {
