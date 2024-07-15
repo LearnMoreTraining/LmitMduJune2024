@@ -20,13 +20,6 @@ public class LearnMoreSteps {
 
     }
 
-    @Given("user navigates to learn more homepage")
-    public void homePage(){
-        driver = new ChromeDriver();
-        driver.get("https://learnmoreplayground.blogspot.com/p/loginpage.html");
-    }
-
-
     @And("user clicks the login button")
     public void clickLoginButton() {
 

@@ -10,19 +10,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import utility.BrowserBase;
 
 
 public class AmazonSteps {
 
-
-    WebDriver driver;
     WebElement element ;
+    BrowserBase browserBase;
+    WebDriver driver;
 
-    @Given("user naviagtes to amazon Home page")
-    public void amazonHomePage(){
-        driver = new ChromeDriver();
-        driver.get("https://www.amazon.in/");
+    public AmazonSteps(){
+       browserBase = new BrowserBase();
     }
+
 
     @When("user enter the product name {string}")
     public void userEnterTheProductName(String prductName) {
@@ -71,6 +71,7 @@ public class AmazonSteps {
 
     @When("user clicks the baby wishlist")
     public void userClicksTheBabyWishlist() {
+       driver =  browserBase.getDriver();
         WebElement element1 = driver.findElement(By.id("nav-link-accountList"));
         Actions action = new Actions(driver);
         action.clickAndHold(element1).build().perform();
