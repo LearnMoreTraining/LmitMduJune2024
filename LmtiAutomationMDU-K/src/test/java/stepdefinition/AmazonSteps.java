@@ -2,26 +2,29 @@ package stepdefinition;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.Browser;
 import pageobjects.BabyWishPage;
 import pageobjects.HomePage;
 import utility.BrowserBase;
+import utility.TestContext;
 
 public class AmazonSteps {
-    WebDriver driver; //null
+
+    TestContext context;
+
+    public AmazonSteps(TestContext context){
+        this.context = context;
+    }
+
     @Given("user navigates to baby wishlist page")
     public void navigation(){
-        BrowserBase base = new BrowserBase();
-        driver = base.getDriver();
-        HomePage homePage = new HomePage(driver);
-        homePage.clickBabyWishList();
+       context.pageObjectManager.getHomePage().clickBabyWishList();
     }
 
     @Then("validate the Baby wish list text")
     public void validateTheBabyWishListText() {
-        BabyWishPage babyWishPage = new BabyWishPage(driver);
-        String output =babyWishPage.getBabyWishListText();
-        System.out.println(output);
+        context.pageObjectManager.getBabyWishList().getBabyWishListText();
     }
 }
