@@ -1,10 +1,7 @@
 package utility;
 
 import org.openqa.selenium.WebDriver;
-import pageobjects.BabyWishPage;
-import pageobjects.HomePage;
-import pageobjects.ProductSpecifcPage;
-import pageobjects.ResultPage;
+import pageobjects.*;
 
 public class PageObjectManager {
 
@@ -31,6 +28,11 @@ public class PageObjectManager {
     public ResultPage getResultPage(){
         ResultPage resultPage = new ResultPage(driver);
         return resultPage;
+    }
+
+    public LmtiAlertPage getAlertPage(){
+        LmtiAlertPage alertPage = new LmtiAlertPage(driver);
+        return alertPage;
     }
 
 
