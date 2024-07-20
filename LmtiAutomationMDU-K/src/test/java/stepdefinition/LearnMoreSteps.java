@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.java.ht.Le;
+import org.junit.Assert;
 import utility.TestContext;
 
 public class LearnMoreSteps {
@@ -21,7 +22,7 @@ public class LearnMoreSteps {
     @And("user get confirm box text")
     public void userGetConfirmBoxText() {
       String text=  context.pageObjectManager.getAlertPage().getConfirmBoxText();
-        System.out.println(text);
+      Assert.assertEquals("Press a Button !",text);
     }
 
     @When("user clicks on cancel button")
@@ -32,6 +33,6 @@ public class LearnMoreSteps {
     @Then("verify the UI text")
     public void verifyTheUIText() {
        String message = context.pageObjectManager.getAlertPage().getUiText();
-        System.out.println(message);
+        Assert.assertEquals("You Pressed Cancel",message);
     }
 }

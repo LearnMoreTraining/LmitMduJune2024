@@ -2,6 +2,7 @@ package stepdefinition;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.Browser;
@@ -25,6 +26,7 @@ public class AmazonSteps {
 
     @Then("validate the Baby wish list text")
     public void validateTheBabyWishListText() {
-        context.pageObjectManager.getBabyWishList().getBabyWishListText();
+
+        Assert.assertEquals("Baby Wishlist",context.pageObjectManager.getBabyWishList().getBabyWishListText());
     }
 }
