@@ -35,5 +35,10 @@ public class PageObjectManager {
         return alertPage;
     }
 
+    public LmtiLoginPage getLmtiLoginPage(){
+        LmtiLoginPage loginPage = new LmtiLoginPage(driver);
+        return loginPage;
+    }
+
 
 }
