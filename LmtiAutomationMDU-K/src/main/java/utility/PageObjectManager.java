@@ -40,5 +40,10 @@ public class PageObjectManager {
         return loginPage;
     }
 
+    public JqueryPage getJqueryPage(){
+        JqueryPage jqueryPage = new JqueryPage(driver);
+        return jqueryPage;
+    }
+
 
 }
